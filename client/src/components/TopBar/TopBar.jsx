@@ -2,26 +2,25 @@ import './topBar.css';
 
 export default function TopBar() {
   return (
-    <div className="topBar">
-      <div className="socialMedias">
-      <i class="fa-brands fa-facebook socialMediasIcon"></i>
-      <i class="fa-brands fa-twitter socialMediasIcon"></i>
-      <i class="fa-brands fa-instagram socialMediasIcon"></i>
-      <i class="fa-brands fa-pinterest socialMediasIcon"></i>
+    <div className="top">
+      <div className="topLeft">
+      <i className="fa-brands fa-facebook topLeftIcon"></i>
+      <i className="fa-brands fa-twitter topLeftIcon"></i>
+      <i className="fa-brands fa-linkedin topLeftIcon"></i>
+      <i className="fa-brands fa-instagram topLeftIcon"></i>
       </div>
-      <div className="menu">
-        <ul className='menuItems'>
-            <li className="menuItem">HOME</li>
-            <li className="menuItem">ABOUT</li>
-            <li className="menuItem">CONTACT</li>
-            <li className="menuItem">WRITE</li>
-            <li className="menuItem">LOGOUT</li>
+      <div className="topCenter">
+        <ul className="topList">
+            <li className="topListItem">HOME</li>
+            <li className="topListItem">ABOUT</li>
+            <li className="topListItem">CONTACT</li>
+            <li className="topListItem">WRITE</li>
+            <li className="topListItem">LOGOUT</li>
         </ul>
       </div>
-      <div className="profilePic">
-        <img 
-            src="" 
-            alt="avatar" />
+      <div className="topRight">
+        <img src="images/profil2.png" alt="avatar" className='topImg'/>
+        <i className="topRightIcon fa-solid fa-magnifying-glass"></i>
       </div>
     </div>
   )
