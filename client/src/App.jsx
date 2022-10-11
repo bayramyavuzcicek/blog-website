@@ -6,13 +6,28 @@ import Write from './components/Pages/write/Write';
 import Settings from './components/Pages/settings/Settings';
 import Register from './components/Pages/register/Register';
 import Login from './components/Pages/login/Login';
+import { BrowserRouter, Routes, Route,Link } from 'react-router-dom';
+
+
 
 function App() {
+  const user = true;
   return (
-    <div className="app">
-      <TopBar/>
-      <Login/>
-    </div>
+    <BrowserRouter>
+
+      <TopBar />
+
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/login' element={user ? <Home/> : <Login />} />
+        <Route path='/Register' element={user ? <Home/> : <Register />} />
+        <Route path='/write' element={user ? <Write/> : <Register />} />
+        <Route path='/settings' element={user ? <Settings/> : <Register />} />
+        <Route path='/single' element={<Single />} />
+      </Routes>
+
+    </BrowserRouter>
+
   );
 }
 

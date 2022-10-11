@@ -4,7 +4,7 @@ export default function SinglePost() {
   return (
     <div className='singlePost'>
         <div className="singlePostWrapper">
-            <img src="images/headerImg2.jpg" alt="singlepost" className='singlePostImg'/>
+            <img src="images/headerImg.jpg" alt="singlepost" className='singlePostImg'/>
             <h1 className="singlePostTitle">
                 Lorem ipsum dolor sit amet.
                 <div className="singlePostEdit">
