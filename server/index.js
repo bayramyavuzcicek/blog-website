@@ -2,11 +2,13 @@ import express from 'express';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import multer from 'multer';
+import cors from 'cors';
 import authRouter from './routes/auth.js';
 import userRouter from './routes/users.js';
 import postRouter from './routes/posts.js';
 import categoryRouter from './routes/categories.js';
 const app = express();
+app.use(cors());
 dotenv.config();
 
 //DB connection
@@ -35,6 +37,6 @@ app.use("/api/users",userRouter);
 app.use("/api/posts",postRouter);
 app.use("/api/categories",categoryRouter);
 
-app.listen("3000", () => {
+app.listen("5000", () => {
     console.log("Backend is running")
 });
