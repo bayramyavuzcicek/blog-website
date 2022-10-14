@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import multer from 'multer';
 import cors from 'cors';
+import path from 'path';
 import authRouter from './routes/auth.js';
 import userRouter from './routes/users.js';
 import postRouter from './routes/posts.js';
@@ -10,6 +11,9 @@ import categoryRouter from './routes/categories.js';
 const app = express();
 app.use(cors());
 dotenv.config();
+
+const __dirname = path.resolve();
+app.use("/images", express.static(path.join(__dirname,"/images")));
 
 //DB connection
 mongoose.connect(process.env.MONGO_URL).then(console.log("Connected to mongoDB")).catch((err) => { console.log(err) });
@@ -20,7 +24,7 @@ const storage = multer.diskStorage({
         cb(null,"images")
     },
     filename: (req,file,cb)=>{
-        cb(null,"hello.png")
+        cb(null,req.body.name)
     }
 });
 const upload = multer({storage:storage});

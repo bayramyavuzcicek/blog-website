@@ -4,7 +4,7 @@ import User from '../models/User.js';
 import Post from '../models/Post.js';
 import Category from '../models/Category.js';
 
-//CREATE CATEGORY
+//CREATE CATEGORY 
 router.post("/",async(req,res)=>{
     const newCategory = new Category({
         name:req.body.name

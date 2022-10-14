@@ -4,20 +4,24 @@ import Header from '../../header/Header'
 import Posts from '../../posts/Posts'
 import SideBar from '../../sideBar/SideBar'
 import './home.css'
+import { useLocation } from 'react-router-dom'
 
 export default function Home() {
 
   //Fetchin all posts from database using axios
   const [posts, setPosts] = useState([]);
-
+  const {search} = useLocation();
+  console.log(search)
   useEffect(()=>{
     const fetchPosts = async()=>{
       axios.defaults.baseURL = 'http://localhost:5000/api';
-      const res = await axios.get("/posts");
+      const res = await axios.get("/posts"+search);
       setPosts(res.data);
     }
     fetchPosts(); 
-  },[])
+  },[search])
+
+  
   return (
     <>
       <Header />

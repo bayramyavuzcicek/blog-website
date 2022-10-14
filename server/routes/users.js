@@ -11,7 +11,7 @@ router.put("/:id", async (req, res) => {
         if(req.body.password){
             const salt = await bcrypt.genSaltSync(10);
             req.body.password = await bcrypt.hashSync(req.body.password, salt);
-        }
+        } 
         try {
             const updatedUser = await User.findByIdAndUpdate(req.params.id,{
                 $set: req.body

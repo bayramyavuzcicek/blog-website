@@ -1,9 +1,14 @@
 import './post.css'
+import { Link } from 'react-router-dom'
 
 export default function Post({post}) {
+  const PF = "http://localhost:5000/images/"
   return (
     <div className='post'>
-      <img src="images/headerImg.jpg" alt="postImg" className='postImg'/>
+      {post.photo && (
+        <img src={ PF + post.photo } alt="postImg" className='postImg'/>
+      )}
+      
       <div className="postInfo">
         <div className="postCats">
           {post.categories.map(category=>(
@@ -12,10 +17,10 @@ export default function Post({post}) {
             
         </div>
         <span className="postTitle">
-            {post.title}
+          <Link to={`/post/${post._id}`} className="link">{post.title}</Link>
         </span>
         <hr />
-        <span className="postDate">1 hour ago</span>
+        <span className="postDate">{new Date(post.createdAt).toDateString()}</span>
       </div>
       <p className="postDescription">
         {post.description}
