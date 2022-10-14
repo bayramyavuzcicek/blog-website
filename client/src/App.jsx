@@ -1,6 +1,6 @@
 import './app.css'
-import TopBar from "./components/topBar/TopBar";
-import Home from "./components/Pages/home/Home";
+import TopBar from "./components/TopBar/TopBar";
+import Home from "./components/Pages/Home/Home";
 import Single from './components/Pages/single/Single';
 import Write from './components/Pages/write/Write';
 import Settings from './components/Pages/settings/Settings';

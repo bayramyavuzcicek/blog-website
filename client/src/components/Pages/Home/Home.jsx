@@ -1,6 +1,6 @@
 import { useEffect,useState } from 'react'
 import axios from 'axios'
-import Header from '../../header/Header'
+import Header from '../../Header/Header'
 import Posts from '../../posts/Posts'
 import SideBar from '../../sideBar/SideBar'
 import './home.css'
